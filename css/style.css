@@ -1,0 +1,261 @@
+
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,500;1,400&family=Poiret+One&display=swap');
+/*=============== VARIAVIES DO  CSS ===============*/
+:root {
+  /*========== Cores ==========*/
+  /*modos de cor  msl  (matiz, saturação, luminosidade)*/
+  /*
+     azul: msl(207, 90%, 61%)
+      roxo: msl(250, 66%, 75%)
+     rosa: msl(356, 66%, 75%)
+      verdeazul: msl(174, 63%, 62%)
+  */
+
+  --mat: 207;
+  --sat: 90%;
+  --lum: 61%;
+  
+  --first-color: hsl(var(--mat), var(--sat), var(--lum));
+  --first-color-alt: hsl(var(--mat), var(--sat), 57%); /* -4% */
+  --title-color: hsl(var(--mat), 12%, 15%);
+  --text-color: hsl(var(--mat), 12%, 45%);
+  --text-color-light: hsl(var(--mat), 8%, 75%);
+  --text-color-lighten: hsl(var(--mat), 8%, 92%);
+  --body-color: hsl(var(--mat), 100%, 99%);
+  --container-color: #fff;
+
+  /*========== font e tipografia do site  ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font:'Montserrat', sans-serif;
+  --name-font:'Poiret One', sans-serif;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+}
+
+
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: .3s; /* para animacao do tema dark  */
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: 600;
+}
+.perfil-name{
+    font-family: var(--name-font);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+
+
+/*========== Variables Dark theme ==========*/
+
+
+/*========== 
+    Color changes in some parts of 
+    the website, in light theme
+==========*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container{
+    max-width: 968px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+/*=============== profile ===============*/
+    .perfil{
+        position: relative;
+        padding-top: 3.5rem;
+    }
+
+    .perfil-container{
+        row-gap: 2rem;
+        }
+
+    .dados-perfil{
+        display: grid;
+        text-align: center;
+    }
+    .perfil-profile{
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(180deg, hsla(var(--mat), var(--sat), var(--lum),  1) 0%,
+                            hsla(var(--mat), var(--sat), var(--lum), .2 )  100%);
+
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    }
+
+    .perfil-profile img{
+        width: 90px;
+    }
+
+    .perfil-border{
+
+        border: 3.5px solid var(--first-color);
+        justify-self: center;
+        width: 115px;
+        height: 115px;
+        border-radius: 50%;
+        display: grid;
+        place-items:    center ;
+        margin-bottom: .75rem;
+    }
+
+    .perfil-name{
+    font-size: var(--h2-font-size);
+    margin-bottom:10px;
+    }
+
+
+    .perfil-profisao{
+        font-size: var(--smaller-font-size);
+        font-weight: 500;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+    }
+
+
+    .perfil-social{
+
+        display: flex;
+        justify-content: center;
+        column-gap: .75rem;
+        margin: 10px;
+    }
+
+    .perfil-sociallinks{
+        font-size: 1.25rem;
+        color: var(--title-color);
+        transition: .3s;
+        margin-bottom: 16px;
+    }
+
+    .perfil-sociallinks:hover{
+        color: var(--first-color);
+    }
+
+    .profile__info{
+        grid-template-columns: repeat(3, max-content);
+        justify-content: center;
+        column-gap: 2.5rem;
+    }
+
+    .profile-infogrupos {
+        text-align: center;
+    }
+
+    .profile-infonumber{
+        font-size: var(--normal-font-size);
+        margin-bottom: .25rem;
+    }
+.profile-infodescricao{
+    font-size: var(--smaller-font-size);
+    font-weight: 500;
+}
+
+/*=============== buttons ===============*/
+
+.button{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 1.5rem 1.5rem;
+    border-radius: .5rem;
+    transition: .3s;
+    box-shadow: 0 8px 24px hsla(var(--mat), var(--sat), var(--lum), .25);
+
+}
+
+.button i{
+
+    font-size: 1.25rem;
+}
+
+
+
+/*=============== filtro da tabela ===============*/
+
+
+/*=============== projetos ===============*/
+
+
+/*=============== habilidades ===============*/
+
+
+/* Hide and show projects & skills */
+
+
+/* Activate button filter */
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
