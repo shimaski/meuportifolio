@@ -5,19 +5,20 @@
 :root {
   /*========== Cores ==========*/
   /*modos de cor  msl  (matiz, saturação, luminosidade)*/
-  /*
+  /*https://colors.dopely.top/color-pedia/234505 /*
+  
      azul: msl(207, 90%, 61%)
       roxo: msl(250, 66%, 75%)
      rosa: msl(356, 66%, 75%)
       verdeazul: msl(174, 63%, 62%)
   */
 
-  --mat: 151;
-  --sat: 93%;
-  --lum: 63%;
+  --mat: 207;
+  --sat: 66%;
+  --lum: 57%;
   
   --first-color: hsl(var(--mat), var(--sat), var(--lum));
-  --first-color-alt: hsl(var(--mat), var(--sat), 59%); /* -4% */
+  --first-color-alt: hsl(var(--mat), var(--sat), 89%); /* -4% */
   --title-color: hsl(var(--mat), 12%, 15%);
   --text-color: hsl(var(--mat), 12%, 45%);
   --text-color-light: hsl(var(--mat), 8%, 75%);
