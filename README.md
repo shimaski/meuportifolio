@@ -27,6 +27,3 @@ Link: https://shimaski.github.io/meuportifolio/
 * CSS / variaveis
 * JavaScript
 * [Google Fonts](https://fonts.google.com/) - Fontes para o projeto.
-
-
-<
