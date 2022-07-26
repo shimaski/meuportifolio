@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3157d79c7e.js" crossorigin="anonymous"></script>
 
             <!---==favicon-->
         <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
@@ -21,7 +22,10 @@
 </head>
 
     <!---=====CONTEUDO DO CABECALHO==========-->
-        <header class="perfil container">   
+        <header class="perfil container" >   
+
+             <!---=====botao do tema ==========-->
+             <i class="ri-moon-line mudar-tema" id="tema-button"></i>
 
             <div class="perfil-containergrid"> 
 
@@ -67,6 +71,7 @@
                                         <!---==== INFORMACOES SOBRE MIM =====-->
 
                                             <div class="profile__info grid">
+
                                                 <div class="profile-infogrupos">
                                                     <h3 class="profile-infonumber"> 7 </h3>
                                                     <p class="profile-infodescricao"> 
@@ -87,13 +92,16 @@
 
 
                                                     <div class="profile-infogrupos">
-                                                        <h3 class="profile-infonumber"> 10</h3>
-                                                        <p class="profile-infodescricao">  
-                                                            Clientes <br>Satisfeitos 
-                                                        </p>
+
+                                                                <h3 class="profile-infonumber"> 10</h3>
+                                                                <p class="profile-infodescricao">  
+                                                                    Clientes <br>Satisfeitos 
+                                                                </p>
                                                     </div>
                                     </div>
+
                                     <br>
+
                                     <div class="profile-buttons">  
 
                                         <!--===curriculo em pdf =====-->
@@ -107,16 +115,11 @@
                                                     " target="_blank" class="button button-small    button__gray "> <!--==acrescentou mais uma classe dentro da classe filho para alterar cor dos botoes de whatsapp e mensenger -->
                                                     <i class="ri-whatsapp-line"></i>
                                                 </a>
-
-                                                    <a href="https://m.me/adrielshimaski" target="_blank" class="button button-small    button__gray ">
-                                                        <i class="ri-messenger-line"></i>
-                                                
-                                                    </a>
+                                                <a href="https://m.me/adrielshimaski" target="_blank" class="button button-small    button__gray ">
+                                                    <i class="ri-messenger-line"></i>
+                                                </a>
 
                                             </div>
-
-
-
 
                                     </div>
             </div>
@@ -126,20 +129,20 @@
     <!----======= MEU CONTEUDO PRINCIPAL======-->
         <main class="main"> 
 
-        <section class="filtros container ">
+        <section class="filtro container">
 
         <!----=======filtros TABS ======-->
 
-            <ul class="filtros-content">
+            <ul class="filters-content">
 
-                    <button class="filtros-button filtros__ativado" data-target="#projetos" >
-                        Projetos
-                    </button>
+                        <button class="filtros-button filter-tab-active" data-target="#projetos">
+                            Projetos
+                        </button>
 
 
-                    <button class="filtros-button" data-target="#habilidades">
-                        Habilidades
-                    </button>
+                        <button class="filtros-button" data-target="#habilidades">
+                            Habilidades
+                        </button>
 
 
             </ul>
@@ -149,9 +152,9 @@
         
         <!----======= PROJETOS======-->
        
-           <div class="projetos-content grid " data-content id="projetos"> 
-                
+        <div class="projects__content grid filters__active" data-content id="projetos">
                     <article class="projetos-card">
+
                     <img src="img/project1.jpeg" alt="" class="projetos-img">
 
                         <div class="projetos-modal">
@@ -165,16 +168,14 @@
                                     </a>
                             </div>
                         </div>
-
-
                     </article>
+
 
                     <article class="projetos-card">
                         <img src="img/project2.jpeg" alt="" class="projetos-img">
     
                         <div class="projetos-modal">
-    
-    
+
                                     <div>
                                         <span class="projeto-subtitulo">exemplo2</span>
                                         <h3 class="projeto-titulo">titulo2</h3>
@@ -183,8 +184,6 @@
                                         </a>
                                 </div>
                             </div>
-    
-    
                         </article>
 
 
@@ -321,11 +320,13 @@
 
                                 </div>
                             </div>
+
+
                              <!----======= area backend ======-->
                             <div class="area-habilidades">
 
                                 <h3 class="habilidades-titulo">
-                                Bckend developer
+                                Backend developer
                                 </h3>
 
                                 <div class="habilidades-box">
@@ -359,7 +360,7 @@
                                                     </div>
                                                 </div>-->
                                     </div>
-
+                            
                                  <!---   nao irei usar por agora .. estou em nível inicial 
                                     <div class="grupo-habilidades">
 
@@ -405,7 +406,10 @@
 
     <!----======= MEU CONTEUDO RODAPE=====-->
     <footer class="footer-container">
+                <span class="roda-copi">
 
+                    &#169; shimaski. All rigths reserved
+                </span>
 
     </footer>
 
@@ -416,7 +420,7 @@
 
 
 <!---======= SCROLL  ============-->
-<script src="" > </script>
+<script src="./js/scrollreveal.min.js" > </script>
 
 
 <!---======= CODIGO PRINCIPAL   ============-->
