@@ -13,39 +13,43 @@
     <!--==== CSS ====-->
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>Portfólio | Adriel Shimaski</title>
+    <title>Meu Portfólio</title>
 </head>
 
 <body>
     <!--===== CABEÇALHO =====-->
     <header class="perfil container">
-        <i class="ri-moon-line mudar-tema" id="tema-button"></i>
+        <!-- Botão de tema -->
+        <i class="ri-moon-line mudar-tema" id="tema-button" aria-label="Mudar tema claro/escuro"></i>
 
         <div class="perfil-containergrid">
+
             <div class="dados-perfil">
                 <div class="perfil-border">
                     <div class="perfil-profile">
-                        <img src="./img/adriel.png" alt="Foto de perfil de Adriel Shimaski">
+                        <img src="./img/adriel.png" alt="Foto de perfil de Adriel Shimaski" class="sr-profile"/>
                     </div>
                 </div>
 
-                <h2 class="perfil-name">Adriel Shimaski</h2>
-                <h3 class="perfil-profisao">Analista de Suporte JR</h3>
+                <h2 class="perfil-name sr-profile">Adriel Shimaski</h2>
+                <h3 class="perfil-profisao sr-profile">Analista de Suporte JR</h3>
+
+                <br>
 
                 <!--==== LINKS SOCIAIS ====-->
                 <ul class="perfil-social">
                     <li>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks sr-social" aria-label="Visitar meu perfil Instagram">
                             <i class="ri-instagram-line"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/shimaski" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks">
+                        <a href="https://github.com/shimaski" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks sr-social" aria-label="Visitar meu perfil GitHub">
                             <i class="ri-github-line"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/adrielshimaski/" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks">
+                        <a href="https://www.linkedin.com/in/adrielshimaski/" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks sr-social" aria-label="Visitar meu perfil LinkedIn">
                             <i class="ri-linkedin-box-line"></i>
                         </a>
                     </li>
@@ -54,28 +58,40 @@
 
             <!--==== INFORMAÇÕES SOBRE MIM ====-->
             <div class="profile__info grid">
-                <div class="profile-infogrupos">
-                    <h3 class="profile-infonumber">9</h3>
+                <div class="profile-infogrupos sr-info">
+                    <h3 class="profile-infonumber">7</h3>
                     <p class="profile-infodescricao">Anos de <br>Trabalho</p>
                 </div>
 
-                <div class="profile-infogrupos">
-                    <h3 class="profile-infonumber">+2</h3>
+                <div class="profile-infogrupos sr-info">
+                    <h3 class="profile-infonumber">+4</h3>
                     <p class="profile-infodescricao">Projetos <br>Completos</p>
+                </div>
+
+                <div class="profile-infogrupos sr-info">
+                    <h3 class="profile-infonumber">10</h3>
+                    <p class="profile-infodescricao">Clientes <br>Satisfeitos</p>
                 </div>
             </div>
 
+            <br>
+
             <!--==== BOTÕES PERFIL ====-->
-            <div class="profile-buttons">
-                <a download href="./Adriel_curriculo_completo.pdf" class="button">
+            <div class="profile-buttons sr-buttons">
+                <a download href="./pdf/" class="button" aria-label="Baixar meu currículo em PDF">
                     Download CV <i class="ri-download-2-line"></i>
                 </a>
 
                 <div class="profilebutton-small">
-                    <a href="https://api.whatsapp.com/send?phone=+5521981335044&text=Olá, mais informações"
+                    <a href="https://api.whatsapp.com/send?phone=+5521981335044" 
                        target="_blank" rel="noopener noreferrer"
-                       class="button button-small button__gray">
+                       class="button button-small button__gray sr-buttons" aria-label="Entrar em contato comigo via WhatsApp">
                         <i class="ri-whatsapp-line"></i>
+                    </a>
+
+                    <a href="https://m.me/adrielshimaski" target="_blank" rel="noopener noreferrer"
+                       class="button button-small button__gray sr-buttons" aria-label="Entrar em contato comigo via Messenger">
+                        <i class="ri-messenger-line"></i>
                     </a>
                 </div>
             </div>
@@ -93,274 +109,180 @@
             </ul>
 
             <div class="filtros-sections">
-
                 <!--==== PROJETOS ====-->
                 <div class="projects__content grid filters__active" data-content id="projetos">
 
-                    <article class="projetos-card">
-                        <img src="img/PropostaZETa.png" alt="Projeto Loja Zeta" class="projetos-img">
+                    <article class="projetos-card sr-project">
+                        <img src="img/PropostaZETa.png" alt="Proposta de Arquitetura de Defesa Loja Zeta" class="projetos-img"/>
                         <div class="projetos-modal">
                             <div>
                                 <span class="projeto-subtitulo">Proposta de Arquitetura de Defesa e Plano de Monitoramento/IR – Loja Zeta</span>
                                 <h3 class="projeto-titulo">Projeto Loja Zeta</h3>
-                                <a href="https://github.com/shimaski/Desafio-Final-Modulo2-AdrielShimaski-"
+                                <a href="https://github.com/shimaski/Desafio-Final-Modulo2-AdrielShimaski-" 
                                    target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small">
+                                   class="projeto-button button button-small" aria-label="Abrir Projeto Loja Zeta no GitHub">
                                    <i class="ri-link"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="projetos-card">
-                        <img src="./img/Projeto de Rede.png" alt="Projeto de Rede Werneck" class="projetos-img">
+                    <article class="projetos-card sr-project">
+                        <img src="./img/Projeto de Rede.png" alt="Projeto de Rede Módulo 1" class="projetos-img"/>
                         <div class="projetos-modal">
                             <div>
                                 <span class="projeto-subtitulo">PROJETO DE REDE - Vai na Web - Módulo 1</span>
-                                <h3 class="projeto-titulo">Projeto de Rede Werneck</h3>
-                                <a href="https://github.com/shimaski/Desafio-Final-Modulo1-AdrielShimaski"
+                                <h3 class="projeto-titulo">PROJETO DE REDE WERNECK</h3>
+                                <a href="https://github.com/shimaski/Desafio-Final-Modulo1-AdrielShimaski" 
                                    target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small">
+                                   class="projeto-button button button-small" aria-label="Abrir Projeto de Rede no GitHub">
                                    <i class="ri-link"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="projetos-card">
-                        <img src="./img/Lebron.png" alt="Projeto Lebron IU" class="projetos-img">
+                    <article class="projetos-card sr-project">
+                        <img src="./img/Lebron.png" alt="Projeto Lebron IU" class="projetos-img"/>
                         <div class="projetos-modal">
                             <div>
                                 <span class="projeto-subtitulo">NBA</span>
                                 <h3 class="projeto-titulo">Projeto Lebron IU</h3>
-                                <a href="https://shimaski.github.io/NBA_iu/"
+                                <a href="https://shimaski.github.io/NBA_iu/" 
                                    target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small">
+                                   class="projeto-button button button-small" aria-label="Abrir Projeto Lebron IU">
                                    <i class="ri-link"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="projetos-card">
-                        <img src="img/HOMEM ARANHA.png" alt="Projeto Spiderman" class="projetos-img">
+                    <article class="projetos-card sr-project">
+                        <img src="img/HOMEM ARANHA.png" alt="Projeto Spiderman Frontweek" class="projetos-img"/>
                         <div class="projetos-modal">
                             <div>
                                 <span class="projeto-subtitulo">Frontweek</span>
                                 <h3 class="projeto-titulo">Spiderman</h3>
-                                <a href="https://shimaski.github.io/Frontweek/spider/"
+                                <a href="https://shimaski.github.io/Frontweek/spider/" 
                                    target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small">
+                                   class="projeto-button button button-small" aria-label="Abrir Projeto Spiderman">
                                    <i class="ri-link"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="projetos-card">
-                        <img src="img/STARBUCKS.png" alt="Interface Starbucks" class="projetos-img">
+                    <article class="projetos-card sr-project">
+                        <img src="img/STARBUCKS.png" alt="Interface Projeto Starbucks" class="projetos-img"/>
                         <div class="projetos-modal">
                             <div>
                                 <span class="projeto-subtitulo">STARBUCKS</span>
                                 <h3 class="projeto-titulo">Interface</h3>
-                                <a href="https://github.com/shimaski?tab=repositories"
+                                <a href="https://github.com/shimaski?tab=repositories" 
                                    target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small">
+                                   class="projeto-button button button-small" aria-label="Abrir Projeto Starbucks no GitHub">
                                    <i class="ri-link"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="projetos-card">
-                        <img src="img/port-scanning.webp" alt="Port Scanner Projeto" class="projetos-img">
+                    <article class="projetos-card sr-project">
+                        <img src="img/port-scanning.webp" alt="Port Scanner Projeto" class="projetos-img"/>
                         <div class="projetos-modal">
                             <div>
                                 <span class="projeto-subtitulo">Port Scanner</span>
                                 <h3 class="projeto-titulo">Projeto Parado</h3>
-                                <a href="https://github.com/shimaski/PortScan"
+                                <a href="https://github.com/shimaski/PortScan" 
                                    target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small">
+                                   class="projeto-button button button-small" aria-label="Abrir Projeto Port Scanner no GitHub">
                                    <i class="ri-link"></i>
                                 </a>
                             </div>
                         </div>
                     </article>
+
                 </div>
 
                 <!--==== HABILIDADES ====-->
-<div class="habilidades-content grid" data-content id="habilidades">
+                <div class="habilidades-content grid" data-content id="habilidades">
 
-    <!-- CIBERSEGURANÇA -->
-    <div class="area-habilidades">
-        <h3 class="habilidades-titulo">Cibersegurança</h3>
-        <div class="habilidades-box">
+                    <!-- FRONTEND -->
+                    <div class="area-habilidades">
+                        <h3 class="habilidades-titulo sr-skills">Frontend Developer</h3>
+                        <div class="habilidades-box">
 
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-shield-check-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Gestão de Riscos e ISO/IEC 27001</h3>
-                        <span class="habilidades-level">Intermediário</span>
+                            <div class="grupo-habilidades">
+                                <div class="habilidades-data sr-skills">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="habilidades-name">HTML</h3>
+                                        <span class="habilidades-level">Intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="habilidades-data sr-skills">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="habilidades-name">CSS</h3>
+                                        <span class="habilidades-level">Basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="habilidades-data sr-skills">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="habilidades-name">JavaScript</h3>
+                                        <span class="habilidades-level">Basic</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grupo-habilidades">
+                                <div class="habilidades-data sr-skills">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="habilidades-name">React</h3>
+                                        <span class="habilidades-level">Basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="habilidades-data sr-skills">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="habilidades-name">Bootstrap</h3>
+                                        <span class="habilidades-level">Basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="habilidades-data sr-skills">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="habilidades-name">Git</h3>
+                                        <span class="habilidades-level">Basic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="habilidades-data">
-                    <i class="ri-bug-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Pentest & Ethical Hacking</h3>
-                        <span class="habilidades-level">Básico</span>
+                    <!-- BACKEND -->
+                    <div class="area-habilidades">
+                        <h3 class="habilidades-titulo sr-skills">Backend Developer</h3>
+                        <div class="habilidades-box">
+                            <div class="grupo-habilidades">
+                                <div class="habilidades-data sr-skills">
+                                    <i class="ri-checkbox-circle-line"></i>
+                                    <div>
+                                        <h3 class="habilidades-name">Node.js</h3>
+                                        <span class="habilidades-level">Basic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-terminal-box-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Kali Linux / Termux</h3>
-                        <span class="habilidades-level">Básico</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-lock-password-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Engenharia Social</h3>
-                        <span class="habilidades-level">Básico</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-search-eye-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">OSINT & Inteligência Cibernética</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-server-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Segurança em Redes (Cisco, Firewalls, IDS/IPS)</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-key-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Criptografia e Autenticação</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-alert-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Resposta a Incidentes e Forense Digital</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- TECNOLOGIA E DESENVOLVIMENTO -->
-    <div class="area-habilidades">
-        <h3 class="habilidades-titulo">Tecnologia & Desenvolvimento</h3>
-        <div class="habilidades-box">
-
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-code-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Python</h3>
-                        <span class="habilidades-level">Básico</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-database-2-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">SQL / Banco de Dados</h3>
-                        <span class="habilidades-level">Básico</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-terminal-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Linux / Shell Script</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-git-branch-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Git & GitHub</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-braces-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">HTML / CSS / JavaScript</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-docker-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Docker e Virtualização</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- SOFT SKILLS -->
-    <div class="area-habilidades">
-        <h3 class="habilidades-titulo">Soft Skills</h3>
-        <div class="habilidades-box">
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-user-star-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Comunicação e Trabalho em Equipe</h3>
-                        <span class="habilidades-level">Avançado</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-lightbulb-flash-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Resolução de Problemas</h3>
-                        <span class="habilidades-level">Avançado</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-time-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Gestão de Tempo e Foco</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
             </div>
         </section>
     </main>
@@ -368,12 +290,34 @@
     <!--===== RODAPÉ =====-->
     <footer class="footer-container">
         <span class="roda-copi">
-            © 2025 Adriel Shimaski — Todos os direitos reservados.
+             Shimaski. All rights reserved.
         </span>
     </footer>
 
     <!--===== SCRIPTS =====-->
     <script src="./js/scrollreveal.min.js"></script>
     <script src="./js/main.js"></script>
+
+    <!--===== ScrollReveal Config =====-->
+    <script>
+        const sr = ScrollReveal({
+            origin: 'bottom',
+            distance: '30px',
+            duration: 800,
+            easing: 'ease-in-out',
+            reset: false
+        });
+
+        // Animar perfil e informações
+        sr.reveal('.sr-profile', { interval: 200 });
+        sr.reveal('.sr-info', { interval: 200 });
+        sr.reveal('.sr-buttons', { interval: 200 });
+
+        // Animar projetos
+        sr.reveal('.sr-project', { interval: 200 });
+
+        // Animar habilidades
+        sr.reveal('.sr-skills', { interval: 150 });
+    </script>
 </body>
 </html>
