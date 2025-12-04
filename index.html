@@ -101,10 +101,16 @@
     <!--===== CONTEÚDO PRINCIPAL =====-->
     <main class="main">
         <section class="filtro container">
-            <!--==== SEÇÃO DE PROJETOS ====-->
-            <div class="projects-section">
-                <h2 class="section-title">Meus Projetos</h2>
-                <div class="projects__content grid filters__active" id="projetos">
+
+            <!--==== TABS DE FILTRO ====-->
+            <ul class="filters-content">
+                <button class="filtros-button filter-tab-active" data-target="#projetos">Projetos</button>
+                <button class="filtros-button" data-target="#habilidades">Habilidades</button>
+            </ul>
+
+            <div class="filtros-sections">
+                <!--==== PROJETOS ====-->
+                <div class="projects__content grid filters__active" data-content id="projetos">
 
                     <article class="projetos-card sr-project">
                         <img src="img/image.png" alt="Port Scanner Projeto" class="projetos-img"/>
@@ -218,12 +224,9 @@
                         </div>
                     </article>
                 </div>
-            </div>
 
-            <!--==== SEÇÃO DE HABILIDADES ====-->
-            <div class="skills-section">
-                <h2 class="section-title">Minhas Habilidades</h2>
-                <div class="habilidades-content grid" id="habilidades">
+                <!--==== HABILIDADES ====-->
+                <div class="habilidades-content grid" data-content id="habilidades">
 
                     <!-- CIBERSEGURANÇA -->
                     <div class="area-habilidades">
@@ -400,11 +403,6 @@
         <span class="roda-copi">
              Shimaski. All rights reserved.
         </span>
-        
-        <!-- Dica do Easter Egg -->
-        <div class="easter-egg-hint" style="margin-top: 10px; font-size: 0.8rem; color: var(--text-color-light);">
-            💡 Dica: Tente Ctrl+Alt+T
-        </div>
     </footer>
 
     <!--==== MODAL PARA DETALHES DO PROJETO ====-->
@@ -444,14 +442,14 @@
         // Animar projetos
         sr.reveal('.sr-project', { interval: 200 });
 
-        // Animar títulos das seções
-        sr.reveal('.section-title', { interval: 200 });
+        // Animar habilidades
+        sr.reveal('.sr-skills', { interval: 150 });
     </script>
 
-    <!--===== SCRIPT DAS MELHORIAS COMPLETAS =====-->
+    <!--===== SCRIPT DAS MELHORIAS =====-->
     <script>
         // ============================================
-        // FUNCIONALIDADES EXTRAS COMPLETAS
+        // FUNCIONALIDADES EXTRAS
         // ============================================
 
         // 1. LOADING SUAVE
@@ -476,8 +474,8 @@
             // 4. BOTÃO VOLTAR AO TOPO
             initBackToTop();
             
-            // 5. TERMINAL HACKER (EASTER EGG)
-            initHackerTerminal();
+            // 5. FUNCIONALIDADE DAS TABS
+            initTabs();
             
             // 6. ANO ATUAL
             initCurrentYear();
@@ -622,9 +620,17 @@
             
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
-                    backToTop.classList.add('show');
+                    backToTop.style.display = 'flex';
+                    setTimeout(() => {
+                        backToTop.style.opacity = '1';
+                    }, 10);
                 } else {
-                    backToTop.classList.remove('show');
+                    backToTop.style.opacity = '0';
+                    setTimeout(() => {
+                        if (window.scrollY <= 300) {
+                            backToTop.style.display = 'none';
+                        }
+                    }, 300);
                 }
             });
 
@@ -636,166 +642,46 @@
             });
         }
 
-        // 5. TERMINAL HACKER (EASTER EGG)
-        function initHackerTerminal() {
-            // Adicionar listener para atalho de teclado
-            document.addEventListener('keydown', function(e) {
-                // Ctrl + Alt + T
-                if (e.ctrlKey && e.altKey && e.key === 't') {
-                    e.preventDefault();
-                    openHackerTerminal();
+        // 5. FUNCIONALIDADE DAS TABS
+        function initTabs() {
+            const tabButtons = document.querySelectorAll('.filtros-button');
+            const tabContents = document.querySelectorAll('[data-content]');
+            
+            // Função para mostrar uma tab específica
+            function showTab(tabId) {
+                // Esconder todos os conteúdos
+                tabContents.forEach(content => {
+                    content.classList.remove('filters__active');
+                });
+                
+                // Remover classe ativa de todos os botões
+                tabButtons.forEach(button => {
+                    button.classList.remove('filter-tab-active');
+                });
+                
+                // Mostrar conteúdo da tab selecionada
+                const selectedContent = document.querySelector(tabId);
+                if (selectedContent) {
+                    selectedContent.classList.add('filters__active');
                 }
-            });
-
-            function openHackerTerminal() {
-                // Criar o terminal
-                const terminal = document.createElement('div');
-                terminal.className = 'hacker-terminal';
-                terminal.innerHTML = `
-                    <div class="terminal-header">
-                        <span>root@shimaski:~</span>
-                        <button class="terminal-close">&times;</button>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="terminal-output">
-                            <p>════════════════════════════════════════</p>
-                            <p>🔒 TERMINAL DE SEGURANÇA - ADRIEL SHIMASKI</p>
-                            <p>════════════════════════════════════════</p>
-                            <p>Bem-vindo ao terminal hacker!</p>
-                            <p>Digite "help" para ver os comandos disponíveis.</p>
-                            <p>------------------------------------------------</p>
-                        </div>
-                        <div class="terminal-input">
-                            <span>root@shimaski:~$ </span>
-                            <input type="text" class="terminal-command" autofocus>
-                        </div>
-                    </div>
-                `;
-
-                document.body.appendChild(terminal);
-
-                // Elementos do terminal
-                const closeBtn = terminal.querySelector('.terminal-close');
-                const commandInput = terminal.querySelector('.terminal-command');
-                const outputArea = terminal.querySelector('.terminal-output');
-
-                // Fechar terminal
-                closeBtn.addEventListener('click', function() {
-                    terminal.remove();
-                });
-
-                // Processar comandos
-                commandInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        const command = this.value.trim().toLowerCase();
-                        this.value = '';
-
-                        let output = '';
-
-                        // Comandos disponíveis
-                        switch(command) {
-                            case 'help':
-                                output = `
-                                    <p><strong>COMANDOS DISPONÍVEIS:</strong></p>
-                                    <p>• help - Mostra esta mensagem de ajuda</p>
-                                    <p>• about - Informações sobre mim</p>
-                                    <p>• skills - Minhas habilidades técnicas</p>
-                                    <p>• projects - Meus projetos principais</p>
-                                    <p>• contact - Informações de contato</p>
-                                    <p>• secret - Comando secreto</p>
-                                    <p>• clear - Limpa o terminal</p>
-                                `;
-                                break;
-
-                            case 'about':
-                                output = `
-                                    <p><strong>ADRIEL SHIMASKI</strong></p>
-                                    <p>Analista de Suporte JR | Especialista em Cibersegurança</p>
-                                    <p>📍 Rio de Janeiro, Brasil</p>
-                                    <p>🎓 Foco em Pentest, Kali Linux e Segurança Ofensiva</p>
-                                    <p>🔧 Apaixonado por resolver problemas complexos</p>
-                                `;
-                                break;
-
-                            case 'skills':
-                                output = `
-                                    <p><strong>HABILIDADES TÉCNICAS:</strong></p>
-                                    <p>• Pentest & Ethical Hacking</p>
-                                    <p>• Kali Linux / Termux</p>
-                                    <p>• Python para automação</p>
-                                    <p>• Segurança em Redes (Cisco)</p>
-                                    <p>• ISO/IEC 27001</p>
-                                    <p>• OSINT & Inteligência Cibernética</p>
-                                `;
-                                break;
-
-                            case 'projects':
-                                output = `
-                                    <p><strong>PROJETOS DESTAQUE:</strong></p>
-                                    <p>• Port Scanner - Ferramenta de varredura em Python</p>
-                                    <p>• CTF Competition - 3º lugar em competição</p>
-                                    <p>• Arquitetura de Segurança - Loja Zeta</p>
-                                    <p>• Teste de Penetração - TechCorp Solutions</p>
-                                    <p>• Projetos de Rede - Topologia Cisco</p>
-                                `;
-                                break;
-
-                            case 'contact':
-                                output = `
-                                    <p><strong>CONTATO:</strong></p>
-                                    <p>• GitHub: <a href="https://github.com/shimaski" target="_blank">github.com/shimaski</a></p>
-                                    <p>• LinkedIn: <a href="https://linkedin.com/in/adrielshimaski" target="_blank">linkedin.com/in/adrielshimaski</a></p>
-                                    <p>• WhatsApp: +55 21 98133-5044</p>
-                                    <p>• E-mail: disponível no LinkedIn</p>
-                                `;
-                                break;
-
-                            case 'secret':
-                                output = `
-                                    <p><strong>🚨 COMANDO SECRETO ATIVADO 🚨</strong></p>
-                                    <p>Parabéns! Você encontrou o comando secreto!</p>
-                                    <p>Como recompensa, aqui vai uma dica:</p>
-                                    <p>"A segurança não é um produto, mas um processo."</p>
-                                    <p>🔓 Dica profissional: Sempre mantenha logs e backups!</p>
-                                `;
-                                break;
-
-                            case 'clear':
-                                outputArea.innerHTML = `
-                                    <p>════════════════════════════════════════</p>
-                                    <p>🔒 TERMINAL DE SEGURANÇA - ADRIEL SHIMASKI</p>
-                                    <p>════════════════════════════════════════</p>
-                                    <p>Terminal limpo. Digite "help" para comandos.</p>
-                                    <p>------------------------------------------------</p>
-                                `;
-                                return;
-
-                            case '':
-                                return;
-
-                            default:
-                                output = `<p>Comando não encontrado: <strong>${command}</strong></p>
-                                         <p>Digite "help" para ver os comandos disponíveis.</p>`;
-                                break;
-                        }
-
-                        // Adicionar saída ao terminal
-                        outputArea.innerHTML += output;
-                        
-                        // Scroll automático para baixo
-                        outputArea.scrollTop = outputArea.scrollHeight;
-                    }
-                });
-
-                // Focar no input automaticamente
-                setTimeout(() => {
-                    commandInput.focus();
-                }, 100);
+                
+                // Ativar botão clicado
+                const activeButton = document.querySelector(`[data-target="${tabId}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('filter-tab-active');
+                }
             }
-
-            // Adicionar dica no console
-            console.log('%c🎮 Easter Egg: Pressione Ctrl+Alt+T para abrir o terminal hacker!', 
-                'color: #0f0; font-size: 12px; font-style: italic;');
+            
+            // Adicionar eventos aos botões das tabs
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-target');
+                    showTab(tabId);
+                });
+            });
+            
+            // Mostrar tab inicial (Projetos)
+            showTab('#projetos');
         }
 
         // 6. ANO ATUAL NO RODAPÉ
@@ -817,15 +703,11 @@
                 'color: #888; font-size: 12px;');
             console.log('%c💼 LinkedIn: https://linkedin.com/in/adrielshimaski', 
                 'color: #888; font-size: 12px;');
-            console.log('%c🎮 Dica: Pressione Ctrl+Alt+T no portfólio para um easter egg!', 
-                'color: #f0a; font-size: 11px; font-style: italic;');
         }
 
         // ============================================
         // FIM DAS FUNCIONALIDADES
         // ============================================
     </script>
-
-    
 </body>
 </html>
