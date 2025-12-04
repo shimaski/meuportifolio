@@ -591,3 +591,336 @@ gap: 2rem 3rem ;
 
   }   
  
+ <!--==== ESTILOS ADICIONAIS ====-->
+        /* Títulos das seções */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--title-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--first-color);
+            border-radius: 2px;
+        }
+        
+        /* Espaçamento entre seções */
+        .projects-section {
+            margin-bottom: 4rem;
+        }
+        
+        .skills-section {
+            margin-top: 4rem;
+        }
+        
+        /* Botão voltar ao topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--first-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .modal-container {
+            background: var(--container-color);
+            border-radius: 10px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-color);
+            z-index: 1002;
+        }
+        
+        .modal-close:hover {
+            color: var(--first-color);
+        }
+        
+        .modal-content {
+            padding: 40px 30px 30px;
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--title-color);
+        }
+        
+        .modal-description {
+            margin-bottom: 25px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .modal-section {
+            margin-bottom: 25px;
+        }
+        
+        .modal-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--title-color);
+        }
+        
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .modal-tag {
+            background: var(--first-color-light);
+            color: var(--first-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .modal-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .modal-button {
+            padding: 12px 24px;
+            font-size: 1rem;
+        }
+        
+        /* Terminal Hacker */
+        .hacker-terminal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 700px;
+            height: 500px;
+            background: #000;
+            color: #0f0;
+            border: 2px solid #0f0;
+            border-radius: 8px;
+            z-index: 1002;
+            font-family: 'Courier New', monospace;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+            overflow: hidden;
+            animation: terminalAppear 0.3s ease;
+        }
+        
+        @keyframes terminalAppear {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+        
+        .terminal-header {
+            background: #111;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0f0;
+            font-weight: bold;
+        }
+        
+        .terminal-close {
+            background: none;
+            border: none;
+            color: #0f0;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .terminal-close:hover {
+            color: #f00;
+        }
+        
+        .terminal-body {
+            padding: 20px;
+            height: calc(100% - 50px);
+            overflow-y: auto;
+        }
+        
+        .terminal-output {
+            margin-bottom: 20px;
+            line-height: 1.5;
+            min-height: 300px;
+        }
+        
+        .terminal-output p {
+            margin: 8px 0;
+        }
+        
+        .terminal-output a {
+            color: #0ff;
+            text-decoration: underline;
+        }
+        
+        .terminal-input {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            border-top: 1px solid #0f0;
+            padding-top: 15px;
+        }
+        
+        .terminal-input span {
+            margin-right: 10px;
+            color: #0f0;
+            font-weight: bold;
+        }
+        
+        .terminal-command {
+            background: transparent;
+            border: none;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            width: calc(100% - 150px);
+            outline: none;
+            caret-color: #0f0;
+        }
+        
+        .terminal-command:focus {
+            outline: none;
+        }
+        
+        /* Efeito de digitação */
+        .typing-effect {
+            overflow: hidden;
+            border-right: 2px solid #0f0;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #0f0 }
+        }
+        
+        /* Loading suave */
+        body {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .modal-container {
+                margin: 10px;
+            }
+            
+            .modal-links {
+                flex-direction: column;
+            }
+            
+            .modal-button {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hacker-terminal {
+                width: 95%;
+                height: 400px;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hacker-terminal {
+                height: 350px;
+                font-size: 14px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .easter-egg-hint {
+                font-size: 0.7rem;
+            }
+        }
